@@ -10,7 +10,7 @@ class DefensiveCopyViewModelTest {
     private val viewModel = DefensiveCopyViewModel()
 
     @Test
-    fun `2개의 리스트는 서로 값이 공유되지 않아야한다`() {
+    fun `내부에서 리스트를 변경해도 외부의 리스트는 수정되지 않아야한다`() {
         // given
         val originalUsers = viewModel.users
 
