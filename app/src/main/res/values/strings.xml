@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EduConcertCounter</string>
+    <string name="counter_action">Click to count</string>
 </resources>
