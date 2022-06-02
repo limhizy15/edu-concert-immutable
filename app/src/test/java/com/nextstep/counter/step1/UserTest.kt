@@ -1,6 +1,7 @@
-package com.nextstep.counter
+package com.nextstep.counter.step1
 
 import com.google.common.truth.Truth.assertThat
+import com.nextstep.counter.User
 import org.junit.Test
 
 
