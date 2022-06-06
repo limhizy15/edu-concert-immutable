@@ -1,8 +1,8 @@
-package com.nextstep.counter.step2
+package camp.nextstep.edu.immutable.step2
 
 import com.google.common.truth.Truth.assertThat
-import com.nextstep.counter.DefensiveCopyViewModel
-import com.nextstep.counter.User
+import camp.nextstep.edu.immutable.DefensiveCopyViewModel
+import camp.nextstep.edu.immutable.User
 import org.junit.Test
 
 

@@ -1,4 +1,4 @@
-package com.nextstep.counter
+package camp.nextstep.edu.immutable
 
 import androidx.lifecycle.ViewModel
 

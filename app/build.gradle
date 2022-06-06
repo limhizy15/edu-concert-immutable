@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.nextstep.counter"
+        applicationId "camp.nextstep.edu.immutable"
         minSdk 26
         targetSdk 32
         versionCode 1
@@ -27,7 +27,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
     buildFeatures {
         viewBinding true

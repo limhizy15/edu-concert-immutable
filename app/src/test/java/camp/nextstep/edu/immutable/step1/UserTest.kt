@@ -1,7 +1,7 @@
-package com.nextstep.counter.step1
+package camp.nextstep.edu.immutable.step1
 
 import com.google.common.truth.Truth.assertThat
-import com.nextstep.counter.User
+import camp.nextstep.edu.immutable.User
 import org.junit.Test
 
 
