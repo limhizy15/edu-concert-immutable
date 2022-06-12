@@ -4,6 +4,7 @@ enum class Command(
     val rawCommand: String,
 ) {
     SHOW_ALL(rawCommand = "showAll"),
+    // TODO: 명령어 추가
     ;
 
     companion object {
