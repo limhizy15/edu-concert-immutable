@@ -1,10 +1,21 @@
 package camp.nextstep.edu.immutable.step2
 
 import org.assertj.core.api.Assertions.assertThat
-import camp.nextstep.edu.immutable.DefensiveCopyViewModel
-import camp.nextstep.edu.immutable.Employee
 import org.junit.Test
 
+private data class Employee(var name: String, var age: Int)
+
+private class DefensiveCopyViewModel {
+
+    private val _employees: MutableList<Employee> = mutableListOf()
+    val employees: List<Employee>
+        get() = _employees
+
+    fun fetchUsers() {
+        _employees.add(Employee(name = "홍길동", age = 10))
+        _employees.add(Employee(name = "김길동", age = 11))
+    }
+}
 
 class DefensiveCopyViewModelTest {
 

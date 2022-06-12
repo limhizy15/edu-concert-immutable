@@ -3,6 +3,15 @@ package camp.nextstep.edu.immutable
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
+private data class Employee(val name: String, val age: Int)
+
+private data class Employees(val employees: List<Employee>) {
+
+    fun filterOlderThan30(): Employees {
+        TODO()
+    }
+}
+
 class EmployeesTest {
 
     @Test

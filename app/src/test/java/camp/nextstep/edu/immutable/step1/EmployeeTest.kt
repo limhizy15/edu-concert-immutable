@@ -1,9 +1,9 @@
 package camp.nextstep.edu.immutable.step1
 
-import camp.nextstep.edu.immutable.Employee
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
+private data class Employee(var name: String, var age: Int)
 
 internal class EmployeeTest {
 
@@ -13,10 +13,11 @@ internal class EmployeeTest {
         val employee = Employee(name = "홍길동", age = 10)
 
         // when
-        val newUser = employee.copy("김길동")
+        val newUser: Employee = TODO()
 
         // then
         assertThat(newUser.name).isEqualTo("김길동")
+        assertThat(newUser.age).isEqualTo(10)
     }
 
 }
