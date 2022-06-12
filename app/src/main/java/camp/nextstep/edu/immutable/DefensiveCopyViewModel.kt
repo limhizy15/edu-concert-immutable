@@ -1,9 +1,6 @@
 package camp.nextstep.edu.immutable
 
-import androidx.lifecycle.ViewModel
-
-
-class DefensiveCopyViewModel : ViewModel() {
+class DefensiveCopyViewModel {
 
     private val _employees: MutableList<Employee> = mutableListOf()
     val employees: List<Employee>
