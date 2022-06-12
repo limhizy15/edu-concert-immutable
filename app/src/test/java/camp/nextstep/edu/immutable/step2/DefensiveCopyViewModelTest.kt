@@ -1,6 +1,6 @@
 package camp.nextstep.edu.immutable.step2
 
-import com.google.common.truth.Truth.assertThat
+import org.assertj.core.api.Assertions.assertThat
 import camp.nextstep.edu.immutable.DefensiveCopyViewModel
 import camp.nextstep.edu.immutable.Employee
 import org.junit.Test

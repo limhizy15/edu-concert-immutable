@@ -1,6 +1,6 @@
 package camp.nextstep.edu.immutable.step3
 
-import com.google.common.truth.Truth.assertThat
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import kotlin.concurrent.thread
 import kotlin.random.Random
@@ -26,8 +26,8 @@ class ConcurrencyIssueTest {
     private fun assertRandomInt(timeout: Long) {
         startTimeoutThread(timeout) {
             Thread.sleep(70L)
-            if (randomInt.value > 50) return@startTimeoutThread // 100
-            assertThat(randomInt.value).isAtMost(50)
+            if (randomInt.value >= 50) return@startTimeoutThread // 100
+            assertThat(randomInt.value).isLessThan(50)
         }
     }
 

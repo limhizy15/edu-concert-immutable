@@ -1,7 +1,7 @@
 package camp.nextstep.edu.immutable.step1
 
-import com.google.common.truth.Truth.assertThat
 import camp.nextstep.edu.immutable.Employee
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
 
