@@ -1,7 +1,7 @@
 package camp.nextstep.edu.immutable.step1
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 private data class Employee(var name: String, var age: Int)
 

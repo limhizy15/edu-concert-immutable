@@ -1,7 +1,7 @@
 package camp.nextstep.edu.immutable.step3
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import kotlin.concurrent.thread
 import kotlin.random.Random
 

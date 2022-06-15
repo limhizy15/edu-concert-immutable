@@ -1,6 +1,6 @@
 package camp.nextstep.edu.immutable
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class EmployeeTest {
 
