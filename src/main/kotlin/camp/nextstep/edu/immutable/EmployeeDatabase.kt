@@ -1,6 +1,4 @@
-package camp.nextstep.edu.immutable.ui
-
-import camp.nextstep.edu.immutable.Employee
+package camp.nextstep.edu.immutable
 
 object EmployeeDatabase {
     fun loadEmployees(): List<Employee> = listOf(
