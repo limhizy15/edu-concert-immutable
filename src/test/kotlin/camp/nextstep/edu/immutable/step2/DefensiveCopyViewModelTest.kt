@@ -3,6 +3,9 @@ package camp.nextstep.edu.immutable.step2
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
+// 안드로이드 개발자를 위한 예시입니다.
+// 실습용이 아니니 참고만 해주세요 :)
+
 private data class Employee(var name: String, var age: Int)
 
 private class DefensiveCopyViewModel {
