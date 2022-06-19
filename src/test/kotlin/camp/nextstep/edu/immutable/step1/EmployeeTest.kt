@@ -3,7 +3,7 @@ package camp.nextstep.edu.immutable.step1
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-private data class Employee(var name: String, var age: Int)
+private data class Employee(val name: String, val age: Int)
 
 internal class EmployeeTest {
 
@@ -13,11 +13,11 @@ internal class EmployeeTest {
         val employee = Employee(name = "홍길동", age = 10)
 
         // when
-        val newUser: Employee = TODO()
+        val newEmployee: Employee = TODO()
 
         // then
-        assertThat(newUser.name).isEqualTo("김길동")
-        assertThat(newUser.age).isEqualTo(10)
+        assertThat(newEmployee.name).isEqualTo("김길동")
+        assertThat(newEmployee.age).isEqualTo(10)
     }
 
 }
