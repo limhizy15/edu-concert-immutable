@@ -1,4 +1,4 @@
-package camp.nextstep.edu.immutable.exercise3
+package camp.nextstep.edu.immutable
 
 object EmployeeDatabase {
     fun loadEmployees(): List<Employee> = listOf(

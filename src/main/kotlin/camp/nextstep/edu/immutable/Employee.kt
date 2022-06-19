@@ -1,4 +1,4 @@
-package camp.nextstep.edu.immutable.exercise3
+package camp.nextstep.edu.immutable
 
 import java.time.LocalDateTime
 
