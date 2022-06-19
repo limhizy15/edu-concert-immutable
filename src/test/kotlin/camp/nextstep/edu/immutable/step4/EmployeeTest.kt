@@ -1,4 +1,4 @@
-package camp.nextstep.edu.immutable.step5
+package camp.nextstep.edu.immutable.step4
 
 import org.junit.jupiter.api.Test
 
