@@ -1,4 +1,4 @@
-package camp.nextstep.edu.immutable.step2
+package camp.nextstep.edu.immutable.live2
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
