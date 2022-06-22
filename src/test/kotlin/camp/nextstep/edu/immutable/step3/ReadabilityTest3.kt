@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 private data class Employees(private val values: List<Employee>) {
     fun filterKim(): Employees {
-        TODO("구현해보세요 :)")
+        return Employees(values.filter { it.name.startsWith("김") })
     }
 
     fun toList(): List<Employee> = values.toList()

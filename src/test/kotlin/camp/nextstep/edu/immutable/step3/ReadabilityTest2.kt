@@ -13,7 +13,7 @@ private class EmployeeManager2 {
     val kimEmployees: List<Employee> = employees.filterKim()
 
     private fun List<Employee>.filterKim(): List<Employee> {
-        TODO("구현해보세요 :)")
+        return filter { it.name.startsWith("김") }
     }
 }
 

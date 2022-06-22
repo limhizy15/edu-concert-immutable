@@ -12,7 +12,7 @@ private class EmployeeManager1 {
     )
 
     val kimEmployees: List<Employee> = employees
-        .filter { TODO("구현해보세요 :)") }
+        .filter { it.name.startsWith("김") }
 }
 
 class ReadabilityTest1 {
