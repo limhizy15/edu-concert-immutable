@@ -13,7 +13,7 @@ internal class EmployeeTest {
         val employee = Employee(name = "홍길동", age = 10)
 
         // when
-        val newEmployee: Employee = TODO()
+        val newEmployee: Employee = employee.copy(name = "김길동")
 
         // then
         assertThat(newEmployee.name).isEqualTo("김길동")
