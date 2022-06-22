@@ -5,7 +5,11 @@ import org.junit.jupiter.api.Test
 
 /** 확장함수로 분리 */
 private class EmployeeManager2 {
-    private val employees: List<Employee> = emptyList()
+    private val employees: List<Employee> = listOf(
+        Employee("김태현"),
+        Employee("김수현"),
+        Employee("박재성"),
+    )
     val kimEmployees: List<Employee> = employees.filterKim()
 
     private fun List<Employee>.filterKim(): List<Employee> {
@@ -24,6 +28,6 @@ class ReadabilityTest2 {
         val actual = employeeManager.kimEmployees
 
         // then
-        assertThat(actual).allMatch { it.name.startsWith("김") }
+        assertThat(actual).containsExactly(Employee("김태현"), Employee("김수현"))
     }
 }
