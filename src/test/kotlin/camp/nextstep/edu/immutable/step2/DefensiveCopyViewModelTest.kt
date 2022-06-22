@@ -12,7 +12,7 @@ private class DefensiveCopyViewModel {
 
     private val _employees: MutableList<Employee> = mutableListOf()
     val employees: List<Employee>
-        get() = _employees
+        get() = _employees.toList()
 
     fun fetchUsers() {
         _employees.add(Employee(name = "홍길동", age = 10))
