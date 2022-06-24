@@ -9,15 +9,17 @@ private data class Employees(private val values: List<Employee>) {
     }
 
     fun toList(): List<Employee> = values.toList()
-
-    companion object {
-        val EMPTY = Employees(emptyList())
-    }
 }
 
 /** 클래스로 분리 */
 private class EmployeeManager3 {
-    private val employees: Employees = Employees.EMPTY
+    private val employees: Employees = Employees(
+        listOf(
+            Employee("김태현"),
+            Employee("김수현"),
+            Employee("박재성"),
+        )
+    )
     val kimEmployees: Employees = employees.filterKim()
 }
 
@@ -32,6 +34,6 @@ class ReadabilityTest3 {
         val actual = employeeManager.kimEmployees.toList()
 
         // then
-        assertThat(actual).allMatch { it.name.startsWith("김") }
+        assertThat(actual).containsExactly(Employee("김태현"), Employee("김수현"))
     }
 }
