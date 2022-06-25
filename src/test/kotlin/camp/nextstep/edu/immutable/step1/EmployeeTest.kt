@@ -3,21 +3,25 @@ package camp.nextstep.edu.immutable.step1
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-private data class Employee(val name: String, val age: Int)
+private data class Employee(var name: String) {
+
+    fun changeName(name: String): Employee {
+        TODO()
+    }
+}
 
 internal class EmployeeTest {
 
     @Test
     fun `사용자의 이름을 변경한다`() {
         // given
-        val employee = Employee(name = "홍길동", age = 10)
+        val employee = Employee(name = "홍길동")
 
         // when
-        val newEmployee: Employee = TODO()
+        val newEmployee: Employee = employee.changeName("김길동")
 
         // then
+        assertThat(employee.name).isEqualTo("홍길동")
         assertThat(newEmployee.name).isEqualTo("김길동")
-        assertThat(newEmployee.age).isEqualTo(10)
     }
-
 }
