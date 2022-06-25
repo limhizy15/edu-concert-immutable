@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Test
 
 class DefensiveCopyTest {
 
-    data class Employee(val name: String, val salary: Int)
-    class Employees(val values: List<Employee>)
-
     @Test
     fun `2개의 리스트는 서로 값이 공유되지 않아야한다`() {
         // given

@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test
 // 안드로이드 개발자를 위한 예시입니다.
 // 실습용이 아니니 참고만 해주세요 :)
 
-private data class Employee(var name: String, var age: Int)
-
 private class DefensiveCopyViewModel {
 
     private val _employees: MutableList<Employee> = mutableListOf()
@@ -15,8 +13,8 @@ private class DefensiveCopyViewModel {
         get() = _employees
 
     fun fetchUsers() {
-        _employees.add(Employee(name = "홍길동", age = 10))
-        _employees.add(Employee(name = "김길동", age = 11))
+        _employees.add(Employee(name = "홍길동", salary = 0))
+        _employees.add(Employee(name = "김길동", salary = 0))
     }
 }
 
