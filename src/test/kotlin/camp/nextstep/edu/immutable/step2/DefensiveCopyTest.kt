@@ -11,7 +11,7 @@ class DefensiveCopyTest {
         val list1: MutableList<Int> = mutableListOf(1, 2, 3)
 
         // when
-        val list2: List<Int> = list1
+        val list2: List<Int> = list1 // TODO: 여기를 수정해보세요 :)
         list1.add(4)
 
         // then
