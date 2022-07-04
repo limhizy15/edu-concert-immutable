@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test
 class EmployeeTest {
 
     @Test
-    fun `사원의 휴가 정보(남은 휴가일수, 쓴 휴가 날짜 목록)를 조회할 수 있다`() {
+    fun `사원의 휴가 정보를 조회할 수 있다`() {
         TODO()
     }
 
@@ -33,7 +33,7 @@ class EmployeeTest {
     }
 
     @Test
-    fun `김씨 사원(SpecialEmployee)에게만 특별 휴가가 부여된다 (일급 컬렉션 활용)`() {
+    fun `김씨 사원에게만 특별 휴가 1일이 부여된다`() {
         TODO()
     }
 }
