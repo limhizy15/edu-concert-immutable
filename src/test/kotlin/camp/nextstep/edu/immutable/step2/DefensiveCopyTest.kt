@@ -1,42 +1,57 @@
 package camp.nextstep.edu.immutable.step2
 
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.catchException
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertAll
+
+// TODO: 이 클래스 내부의 코드를 변경해보세요 :)
+class EmployeeManager {
+    private val _employees: MutableList<Employee> = mutableListOf()
+    val employees: List<Employee>
+        get() = _employees
+
+    fun addEmployee(employee: Employee) {
+        _employees.add(employee)
+    }
+}
 
 class DefensiveCopyTest {
+    private val employeeManager = EmployeeManager()
 
     @Test
-    fun `2개의 리스트는 서로 값이 공유되지 않아야한다`() {
+    fun `외부에서 접근 가능한 List와 내부의 List는 서로 변경사항이 공유되지 않아야한다`() {
         // given
-        val list1: MutableList<Int> = mutableListOf(1, 2, 3)
+        val employees = employeeManager.employees
 
         // when
-        val list2: List<Int> = list1 // TODO: 여기를 수정해보세요 :)
-        list1.add(4)
+        val employee = Employee("홍길동", 0)
+        employeeManager.addEmployee(employee)
 
         // then
-        assertThat(list1).isNotEqualTo(list2)
-        assertThat(list1).containsExactly(1, 2, 3, 4)
-        assertThat(list2).containsExactly(1, 2, 3)
+        assertAll(
+            { assertThat(employees).doesNotContain(employee) },
+            { assertThat(employees).isEmpty() }
+        )
     }
 
     @Test
     fun `연봉이 바뀌지 않아야 한다`() {
         // given
-        val employees = Employees(
-            mutableListOf(
-                Employee(name = "김태현", salary = 100_000_000),
-                Employee(name = "김수현", salary = 100_000_000),
-                Employee(name = "제이슨", salary = 100_000_000),
-            )
-        )
+        val expectedEmployee = Employee("홍길동", 100_000_000)
+        employeeManager.addEmployee(expectedEmployee)
 
         // when
-        (employees.values as MutableList<Employee>)
-            .replaceAll { it.copy(salary = 100) }
+        val actualException = catchException {
+            (employeeManager.employees as MutableList<Employee>)
+                .replaceAll { it.copy(salary = 0) }
+        }
 
         // then
-        assertThat(employees.values)
-            .allMatch { it.salary == 100_000_000 }
+        val actualEmployee = employeeManager.employees.find { it.name == expectedEmployee.name }
+        assertAll(
+            { assertThat(actualEmployee?.salary).isEqualTo(100_000_000) },
+            { assertThat(actualException).isNotNull() },
+        )
     }
 }
