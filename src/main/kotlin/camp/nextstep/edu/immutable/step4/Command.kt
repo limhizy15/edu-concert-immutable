@@ -1,0 +1,14 @@
+package camp.nextstep.edu.immutable.step4
+
+enum class Command(
+    val rawCommand: String,
+) {
+    SHOW(rawCommand = "show"),
+    VACATION(rawCommand = "vacation"),
+    ;
+
+    companion object {
+        fun find(rawCommand: String): Command? =
+            values().find { it.rawCommand == rawCommand }
+    }
+}
