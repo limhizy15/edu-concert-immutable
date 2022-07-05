@@ -3,7 +3,7 @@ package camp.nextstep.edu.immutable.step1
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-// NOTE: 실제로는 `src/main/kotlin` 디렉토리에 위치해야 합니다.
+// NOTE: 보통 실무에서는 `src/main/kotlin` 디렉토리에 위치시킵니다. 실습 편의를 위해 테스트 디렉토리에 둡니다.
 private data class Employee(var name: String) {
 
     fun changeName(name: String): Employee {
