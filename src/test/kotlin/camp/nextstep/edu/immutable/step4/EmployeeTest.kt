@@ -1,6 +1,8 @@
 package camp.nextstep.edu.immutable.step4
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import java.time.LocalDate
 
 /**
  * - Side Effect를 끊는걸 의식적으로 연습해보기
@@ -19,7 +21,15 @@ class EmployeeTest {
 
     @Test
     fun `1년 이하의 사원이면 1달마다 1일의 휴가가 부여된다`() {
-        TODO()
+        // when
+        val actual = Employee.of(
+            name = "김태현",
+            joinedAt = LocalDate.of(2022, 1, 1),
+            currentDate = LocalDate.of(2022, 3, 1),
+        )
+
+        // then
+        assertThat(actual.unusedVacationCount).isEqualTo(2)
     }
 
     @Test
