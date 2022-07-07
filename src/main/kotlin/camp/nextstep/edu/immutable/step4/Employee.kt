@@ -9,7 +9,20 @@ data class Employee(
     val unusedVacationCount: Int,
     val usedVacationDates: List<LocalDate>,
 ) {
+    init {
+        require(unusedVacationCount >= MIN_VACATION_COUNT)
+    }
+
+    fun useVacation(date: LocalDate): Employee {
+        return copy(
+            unusedVacationCount = unusedVacationCount - 1,
+            usedVacationDates = usedVacationDates + date,
+        )
+    }
+
     companion object {
+        private const val MIN_VACATION_COUNT = 0
+
         private const val FULL_VACATION_COUNT = 15
         private const val FULL_VACATION_YEAR = 1
 

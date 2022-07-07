@@ -17,7 +17,25 @@ class EmployeeTest {
 
     @Test
     fun `사원은 휴가를 소비할 수 있다`() {
-        TODO()
+        // given
+        val employee = Employee.of(
+            name = "홍길동",
+            joinedAt = LocalDate.of(2022, 1, 1),
+            currentDate = LocalDate.of(2022, 3, 1),
+        )
+
+        // when
+        val actual = employee
+            .useVacation(LocalDate.of(2022, 4, 4))
+            .useVacation(LocalDate.of(2022, 4, 5))
+
+        // then
+        assertAll(
+            { assertThat(actual.unusedVacationCount).isEqualTo(0) },
+            { assertThat(actual.usedVacationDates).hasSize(2) },
+            { assertThat(actual.usedVacationDates).contains(LocalDate.of(2022, 4, 4)) },
+            { assertThat(actual.usedVacationDates).contains(LocalDate.of(2022, 4, 5)) },
+        )
     }
 
     @Test
