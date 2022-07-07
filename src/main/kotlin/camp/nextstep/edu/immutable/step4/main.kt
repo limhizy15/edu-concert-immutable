@@ -4,18 +4,28 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 private val employeeRepository = EmployeeRepository().apply {
-    val sampleEmployee = Employee
+    val sampleEmployee1 = Employee
         .of(
             name = "김태현",
             joinedAt = LocalDate.of(2020, 1, 1),
         )
-        .useVacation(LocalDate.of(2022, 4, 4))
-        .useVacation(LocalDate.of(2022, 4, 5))
-        .useVacation(LocalDate.of(2022, 4, 6))
-    save(sampleEmployee)
+    save(sampleEmployee1)
+
+    val sampleEmployee2 = Employee
+        .of(
+            name = "김수현",
+            joinedAt = LocalDate.of(2022, 1, 1),
+        )
+    save(sampleEmployee2)
 }
 
 fun main() {
+    while (true) {
+        readCommand()
+    }
+}
+
+private fun readCommand() {
     print("명령어를 입력하세요: ")
 
     val arguments = readln().split(" ")
@@ -54,4 +64,5 @@ private fun showEmployee(employee: Employee) {
         휴가일: $usedVacations
     """.trimIndent()
     println(text)
+    println()
 }
