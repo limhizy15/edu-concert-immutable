@@ -3,15 +3,11 @@ package camp.nextstep.edu.immutable.step4
 enum class Command(
     val rawCommand: String,
 ) {
-    SHOW_ALL(rawCommand = "showAll"),
-    // TODO: 명령어 추가
+    SHOW(rawCommand = "show"),
+    VACATION(rawCommand = "vacation"),
     ;
 
     companion object {
-        val RAW_COMMANDS = values()
-            .map(Command::rawCommand)
-            .joinToString()
-
         fun find(rawCommand: String): Command? =
             values().find { it.rawCommand == rawCommand }
     }

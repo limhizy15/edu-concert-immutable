@@ -8,7 +8,7 @@ private class EmployeeManager2 {
     private val employees: List<Employee> = listOf(
         Employee("김태현"),
         Employee("김수현"),
-        Employee("박재성"),
+        Employee("제이슨"),
     )
     val kimEmployees: List<Employee> = employees.filterKim()
 
