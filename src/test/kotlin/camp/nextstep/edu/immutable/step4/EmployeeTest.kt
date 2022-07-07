@@ -34,7 +34,15 @@ class EmployeeTest {
 
     @Test
     fun `1년 이상 근속한 사원에게 15일의 휴가가 부여된다`() {
-        TODO()
+        // when
+        val actual = Employee.of(
+            name = "김태현",
+            joinedAt = LocalDate.of(2020, 1, 1),
+            currentDate = LocalDate.of(2022, 3, 1),
+        )
+
+        // then
+        assertThat(actual.unusedVacationCount).isEqualTo(15)
     }
 
     @Test

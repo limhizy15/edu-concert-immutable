@@ -10,18 +10,31 @@ data class Employee(
     val usedVacationDates: List<LocalDate>,
 ) {
     companion object {
+        private const val FULL_VACATION_COUNT = 15
+        private const val FULL_VACATION_YEAR = 1
+
         fun of(
             name: String,
             joinedAt: LocalDate,
             currentDate: LocalDate = LocalDate.now(),
         ): Employee {
-            val unusedVacationCount = Period.between(joinedAt, currentDate).months
             return Employee(
                 name = name,
                 joinedAt = joinedAt,
-                unusedVacationCount = unusedVacationCount,
+                unusedVacationCount = calculateUnusedVacationCount(joinedAt, currentDate),
                 usedVacationDates = emptyList(),
             )
+        }
+
+        private fun calculateUnusedVacationCount(
+            joinedAt: LocalDate,
+            currentDate: LocalDate,
+        ): Int {
+            val period = Period.between(joinedAt, currentDate)
+            if (period.years > FULL_VACATION_YEAR) {
+                return FULL_VACATION_COUNT
+            }
+            return period.months
         }
     }
 }
