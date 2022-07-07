@@ -30,7 +30,17 @@ fun main() {
                 ?: throw IllegalArgumentException("사원을 찾지 못했습니다. employeeName: $employeeName")
             showEmployee(employee)
         }
-        Command.VACATION -> TODO("구현해보세요 :)")
+        Command.VACATION -> {
+            val employeeName = arguments.drop(1).first()
+            val employee = employeeRepository.findEmployee(employeeName)
+                ?: throw IllegalArgumentException("사원을 찾지 못했습니다. employeeName: $employeeName")
+
+            val commandArguments = arguments.drop(2)
+            val vacationDates = commandArguments.map(LocalDate::parse)
+            val newEmployee = vacationDates.fold(employee, Employee::useVacation)
+            employeeRepository.save(newEmployee)
+            showEmployee(newEmployee)
+        }
     }
 }
 
