@@ -27,6 +27,7 @@ class EmployeeTest {
         val actual = employee
             .useVacation(LocalDate.of(2022, 4, 4))
             .useVacation(LocalDate.of(2022, 4, 5))
+            .vacations
 
         // then
         assertAll(

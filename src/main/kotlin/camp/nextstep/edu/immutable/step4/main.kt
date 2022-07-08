@@ -45,7 +45,7 @@ private fun readCommand() {
 
             val commandArguments = arguments.drop(2)
             val vacationDates = commandArguments.map(LocalDate::parse)
-            val newEmployee = vacationDates.fold(employee, Employee::useVacation)
+            val newEmployee = employee.useVacation(vacationDates)
             employeeRepository.save(newEmployee)
             showEmployee(newEmployee)
         }
@@ -53,10 +53,10 @@ private fun readCommand() {
 }
 
 private fun showEmployee(employee: Employee) {
-    val usedVacations = employee.usedVacationDates.joinToString(" ")
+    val usedVacations = employee.vacations.usedVacationDates.joinToString(" ")
     val text = """
         이름: ${employee.name}
-        남은 휴가일수: ${employee.unusedVacationCount}
+        남은 휴가일수: ${employee.vacations.unusedVacationCount}
         휴가일: $usedVacations
     """.trimIndent()
     println(text)

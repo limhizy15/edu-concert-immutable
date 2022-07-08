@@ -23,10 +23,9 @@ class EmployeeRepositoryTest {
     @Test
     fun `사원의 휴가 정보를 조회할 수 있다`() {
         // given
-        val employee = Employee(
+        val employee = Employee.of(
             name = EmployeeName("김태현"),
             unusedVacationCount = 0,
-            usedVacationDates = emptyList(),
         )
         repository.save(employee)
 
@@ -35,8 +34,8 @@ class EmployeeRepositoryTest {
 
         // then
         assertAll(
-            { assertThat(actual?.unusedVacationCount).isZero() },
-            { assertThat(actual?.usedVacationDates).isEmpty() },
+            { assertThat(actual?.vacations?.unusedVacationCount).isZero() },
+            { assertThat(actual?.vacations?.usedVacationDates).isEmpty() },
         )
 
     }

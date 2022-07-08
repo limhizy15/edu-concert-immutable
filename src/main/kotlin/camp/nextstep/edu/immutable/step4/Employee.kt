@@ -4,31 +4,24 @@ import java.time.LocalDate
 
 data class Employee(
     val name: EmployeeName,
-    val unusedVacationCount: Int,
-    val usedVacationDates: List<LocalDate>,
+    val vacations: Vacations,
 ) {
-    init {
-        require(unusedVacationCount >= MIN_VACATION_COUNT)
+    fun useVacation(date: LocalDate): Employee {
+        return copy(vacations = vacations.useVacation(date))
     }
 
-    fun useVacation(date: LocalDate): Employee {
-        return copy(
-            unusedVacationCount = unusedVacationCount - 1,
-            usedVacationDates = usedVacationDates + date,
-        )
+    fun useVacation(dates: List<LocalDate>): Employee {
+        return dates.fold(this, Employee::useVacation)
     }
 
     companion object {
-        private const val MIN_VACATION_COUNT = 0
-
         fun of(
             name: EmployeeName,
             unusedVacationCount: Int,
         ): Employee {
             return Employee(
                 name = name,
-                unusedVacationCount = unusedVacationCount,
-                usedVacationDates = emptyList(),
+                vacations = Vacations.of(unusedVacationCount),
             )
         }
     }
