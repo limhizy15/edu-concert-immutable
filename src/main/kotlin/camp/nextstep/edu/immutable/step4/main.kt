@@ -26,6 +26,14 @@ private fun readCommand() {
         ?: throw UnsupportedOperationException("Unsupported command: $rawCommand")
 
     when (command) {
+        Command.ADD -> {
+            val employeeName = arguments.drop(1).first()
+            val unusedVacationCount = arguments.drop(2).first().toInt()
+
+            val employee = Employee.of(employeeName, unusedVacationCount)
+            employeeRepository.save(employee)
+            showEmployee(employee)
+        }
         Command.SHOW -> {
             val employeeName = arguments.drop(1).first()
             val employee = employeeRepository.findEmployee(employeeName)
