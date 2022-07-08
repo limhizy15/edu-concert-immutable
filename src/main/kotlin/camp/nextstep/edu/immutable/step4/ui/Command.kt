@@ -1,4 +1,4 @@
-package camp.nextstep.edu.immutable.step4
+package camp.nextstep.edu.immutable.step4.ui
 
 enum class Command(
     val rawCommand: String,

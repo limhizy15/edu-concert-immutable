@@ -1,13 +1,15 @@
-package camp.nextstep.edu.immutable.step4
+package camp.nextstep.edu.immutable.step4.ui
 
+import camp.nextstep.edu.immutable.step4.Employee
+import camp.nextstep.edu.immutable.step4.EmployeeName
+import camp.nextstep.edu.immutable.step4.EmployeeRepository
 import java.time.LocalDate
 
 private val employeeRepository = EmployeeRepository().apply {
-    val sampleEmployee = Employee
-        .of(
-            name = EmployeeName("김수현"),
-            unusedVacationCount = 7,
-        )
+    val sampleEmployee = Employee.of(
+        name = EmployeeName("김수현"),
+        unusedVacationCount = 7,
+    )
     save(sampleEmployee)
 }
 
