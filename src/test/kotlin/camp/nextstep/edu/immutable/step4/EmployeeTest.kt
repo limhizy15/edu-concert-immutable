@@ -19,7 +19,7 @@ class EmployeeTest {
     fun `사원은 휴가를 소비할 수 있다`() {
         // given
         val employee = Employee.of(
-            name = "홍길동",
+            name = EmployeeName("홍길동"),
             unusedVacationCount = 2,
         )
 

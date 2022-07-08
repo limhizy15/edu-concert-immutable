@@ -5,7 +5,7 @@ import java.time.LocalDate
 private val employeeRepository = EmployeeRepository().apply {
     val sampleEmployee = Employee
         .of(
-            name = "김수현",
+            name = EmployeeName("김수현"),
             unusedVacationCount = 7,
         )
     save(sampleEmployee)
@@ -25,9 +25,9 @@ private fun readCommand() {
     val command = Command.find(rawCommand)
         ?: throw UnsupportedOperationException("Unsupported command: $rawCommand")
 
+    val employeeName = EmployeeName(arguments.drop(1).first())
     when (command) {
         Command.ADD -> {
-            val employeeName = arguments.drop(1).first()
             val unusedVacationCount = arguments.drop(2).first().toInt()
 
             val employee = Employee.of(employeeName, unusedVacationCount)
@@ -35,13 +35,11 @@ private fun readCommand() {
             showEmployee(employee)
         }
         Command.SHOW -> {
-            val employeeName = arguments.drop(1).first()
             val employee = employeeRepository.findEmployee(employeeName)
                 ?: throw IllegalArgumentException("사원을 찾지 못했습니다. employeeName: $employeeName")
             showEmployee(employee)
         }
         Command.VACATION -> {
-            val employeeName = arguments.drop(1).first()
             val employee = employeeRepository.findEmployee(employeeName)
                 ?: throw IllegalArgumentException("사원을 찾지 못했습니다. employeeName: $employeeName")
 

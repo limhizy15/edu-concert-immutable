@@ -3,7 +3,7 @@ package camp.nextstep.edu.immutable.step4
 import java.time.LocalDate
 
 data class Employee(
-    val name: String,
+    val name: EmployeeName,
     val unusedVacationCount: Int,
     val usedVacationDates: List<LocalDate>,
 ) {
@@ -22,7 +22,7 @@ data class Employee(
         private const val MIN_VACATION_COUNT = 0
 
         fun of(
-            name: String,
+            name: EmployeeName,
             unusedVacationCount: Int,
         ): Employee {
             return Employee(
