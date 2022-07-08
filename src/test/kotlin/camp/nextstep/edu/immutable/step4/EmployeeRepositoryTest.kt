@@ -8,6 +8,19 @@ class EmployeeRepositoryTest {
     private val repository = EmployeeRepository()
 
     @Test
+    fun `새로운 사원을 추가할 수 있다`() {
+        // given
+        val employee = Employee.of("김수현", 0)
+
+        // when
+        repository.save(employee)
+
+        // then
+        val actual = repository.findEmployee("김수현")
+        assertThat(actual).isNotNull
+    }
+
+    @Test
     fun `사원의 휴가 정보를 조회할 수 있다`() {
         // given
         val employee = Employee(

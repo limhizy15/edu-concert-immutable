@@ -16,11 +16,6 @@ import java.time.LocalDate
 class EmployeeTest {
 
     @Test
-    fun `새로운 사원을 추가할 수 있다`() {
-        TODO()
-    }
-
-    @Test
     fun `사원은 휴가를 소비할 수 있다`() {
         // given
         val employee = Employee.of(
