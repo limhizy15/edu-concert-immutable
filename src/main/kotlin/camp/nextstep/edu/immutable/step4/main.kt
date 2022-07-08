@@ -1,22 +1,14 @@
 package camp.nextstep.edu.immutable.step4
 
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 private val employeeRepository = EmployeeRepository().apply {
-    val sampleEmployee1 = Employee
-        .of(
-            name = "김태현",
-            joinedAt = LocalDate.of(2020, 1, 1),
-        )
-    save(sampleEmployee1)
-
-    val sampleEmployee2 = Employee
+    val sampleEmployee = Employee
         .of(
             name = "김수현",
-            joinedAt = LocalDate.of(2022, 1, 1),
+            unusedVacationCount = 7,
         )
-    save(sampleEmployee2)
+    save(sampleEmployee)
 }
 
 fun main() {
@@ -55,11 +47,9 @@ private fun readCommand() {
 }
 
 private fun showEmployee(employee: Employee) {
-    val dateFormatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일")
     val usedVacations = employee.usedVacationDates.joinToString(" ")
     val text = """
         이름: ${employee.name}
-        입사일: ${dateFormatter.format(employee.joinedAt)}
         남은 휴가일수: ${employee.unusedVacationCount}
         휴가일: $usedVacations
     """.trimIndent()

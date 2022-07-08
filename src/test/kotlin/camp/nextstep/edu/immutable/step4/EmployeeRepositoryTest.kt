@@ -3,7 +3,6 @@ package camp.nextstep.edu.immutable.step4
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
-import java.time.LocalDate
 
 class EmployeeRepositoryTest {
     private val repository = EmployeeRepository()
@@ -13,7 +12,6 @@ class EmployeeRepositoryTest {
         // given
         val employee = Employee(
             name = "김태현",
-            joinedAt = LocalDate.now(),
             unusedVacationCount = 0,
             usedVacationDates = emptyList(),
         )
