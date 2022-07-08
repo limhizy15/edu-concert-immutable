@@ -13,27 +13,17 @@ import org.junit.jupiter.api.Test
 class EmployeeTest {
 
     @Test
+    fun `새로운 사원을 추가할 수 있다`() {
+        TODO()
+    }
+
+    @Test
     fun `사원의 휴가 정보를 조회할 수 있다`() {
         TODO()
     }
 
     @Test
     fun `사원은 휴가를 소비할 수 있다`() {
-        TODO()
-    }
-
-    @Test
-    fun `1년 이하의 사원이면 1달마다 1일의 휴가가 부여된다`() {
-        TODO()
-    }
-
-    @Test
-    fun `1년 이상 근속한 사원에게 15일의 휴가가 부여된다`() {
-        TODO()
-    }
-
-    @Test
-    fun `김씨 사원에게만 특별 휴가 1일이 부여된다`() {
         TODO()
     }
 }
