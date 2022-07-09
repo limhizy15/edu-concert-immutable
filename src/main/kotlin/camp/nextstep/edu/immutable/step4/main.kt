@@ -9,6 +9,7 @@ fun main() {
         ?: throw UnsupportedOperationException("Unsupported command: $rawCommand")
 
     when (command) {
+        Command.ADD -> TODO("구현해보세요 :)")
         Command.SHOW -> TODO("구현해보세요 :)")
         Command.VACATION -> TODO("구현해보세요 :)")
     }

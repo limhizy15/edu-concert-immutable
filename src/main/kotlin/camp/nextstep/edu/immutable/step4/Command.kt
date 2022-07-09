@@ -3,6 +3,7 @@ package camp.nextstep.edu.immutable.step4
 enum class Command(
     val rawCommand: String,
 ) {
+    ADD(rawCommand = "add"),
     SHOW(rawCommand = "show"),
     VACATION(rawCommand = "vacation"),
     ;
