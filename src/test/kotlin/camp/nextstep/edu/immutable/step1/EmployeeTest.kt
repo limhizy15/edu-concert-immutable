@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 private data class Employee(var name: String) {
 
     fun changeName(name: String): Employee {
-        TODO()
+        return this.copy(name = name)
     }
 }
 

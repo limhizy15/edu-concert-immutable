@@ -5,11 +5,10 @@ import org.assertj.core.api.Assertions.catchException
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 
-// TODO: 이 클래스 내부의 코드를 변경해보세요 :)
 class EmployeeManager {
     private val _employees: MutableList<Employee> = mutableListOf()
     val employees: List<Employee>
-        get() = _employees
+        get() = _employees.toList()
 
     fun addEmployee(employee: Employee) {
         _employees.add(employee)
